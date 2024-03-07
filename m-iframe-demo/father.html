@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我是主项目</title>
+  </head>
+  <body>
+    <h1>我是主项目哦</h1>
+    <div class="box" style="width:400px;height:400px;">
+      <div class="menu" style="border: 1px solid red;">
+        <button id="son1Btn">son1</button>
+        <button id="son2Btn">son2</button>
+        <button id="son3Btn">son3</button>
+      </div>
+      <iframe
+        style="height:200px;"
+        id="iframeContent"
+        src="http://localhost:4000/son1"
+        frameborder="1"
+      ></iframe>
+    </div>
+  </body>
+  <script>
+    const son1Btn = document.querySelector('#son1Btn');
+    const son2Btn = document.querySelector('#son2Btn');
+    const son3Btn = document.querySelector('#son3Btn');
+    const iframeContent = document.querySelector('#iframeContent');
+    son1Btn.addEventListener('click',()=>iframeContent.src='http://www.zakingwong.com/son1')
+    son2Btn.addEventListener('click',()=>iframeContent.src='http://www.zakingwong.com/son2')
+    son3Btn.addEventListener('click',()=>iframeContent.src='http://www.zakingwong.com/son3')
+  </script>
+</html>
