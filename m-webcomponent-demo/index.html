@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Micro Base Web Component Demo</title>
+  </head>
+  <body>
+    <template id="micro-template-1">
+      <style>
+        .mirco-box-1 {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+      </style>
+      <div class="mirco-box-1">微应用1</div>
+    </template>
+    <template id="micro-template-2">
+      <style>
+        .mirco-box-2 {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+      </style>
+      <div class="mirco-box-2">微应用2</div>
+    </template>
+    <script>
+      customElements.define('micro-comp-1', class MicroComp1 extends HTMLElement {
+          constructor() {
+              super();
+              const template = document.getElementById('micro-template-1');
+              const templateContent = template.content;
+              console.log(this);
+              const shadowRoot = this.attachShadow({mode: 'open'});
+              shadowRoot.appendChild(templateContent.cloneNode(true));
+          }
+      });
+      customElements.define('micro-comp-2', class MicroComp2 extends HTMLElement {
+          constructor() {
+              super();
+              const template = document.getElementById('micro-template-2');
+              const templateContent = template.content;
+              console.log(this);
+              const shadowRoot = this.attachShadow({mode: 'open'});
+              shadowRoot.appendChild(templateContent.cloneNode(true));
+          }
+      });
+    </script>
+    <h1>Main Page</h1>
+    <div class="btn-nav">
+      <button id="micro1">micro 1</button>
+      <button id="micro2">micro 2</button>
+    </div>
+    <div id="micro-area"></div>
+    <script>
+      const btn1 = document.querySelector('#micro1');
+      const btn2 = document.querySelector('#micro2');
+      let contentArea = document.querySelector('#micro-area');
+      btn1.addEventListener('click',()=>{
+        while (contentArea.firstChild) {
+          contentArea.removeChild(contentArea.firstChild);
+        }
+        contentArea.appendChild(document.createElement('micro-comp-1'))
+      })
+      btn2.addEventListener('click',()=>{
+        while (contentArea.firstChild) {
+          contentArea.removeChild(contentArea.firstChild);
+        }
+        contentArea.appendChild(document.createElement('micro-comp-2'))
+      })
+    </script>
+  </body>
+</html>
