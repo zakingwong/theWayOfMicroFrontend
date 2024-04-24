@@ -3,7 +3,25 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const routes = [];
+const loginC = {
+  path: "/login",
+  component: () => import("@/views/login/index"),
+};
+
+const contentRouter = [
+  {
+    path: "order",
+    component: () => import("@/views/order/index"),
+  },
+];
+
+const dashboardC = {
+  path: "/",
+  component: () => import("@/views/dashboard/index"),
+  children: [...contentRouter],
+};
+
+const routes = [loginC, dashboardC];
 
 const router = new VueRouter({
   routes,
