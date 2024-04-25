@@ -1,5 +1,5 @@
 <template>
-  <div>
-    123
+  <div class="app-box">
+    <NuxtPage/>
   </div>
 </template>

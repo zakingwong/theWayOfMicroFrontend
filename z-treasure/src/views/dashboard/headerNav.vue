@@ -14,19 +14,11 @@
       text-color="#fff"
       active-text-color="#ffd04b"
     >
-      <el-menu-item index="1">处理中心</el-menu-item>
-      <el-submenu index="2">
-        <template slot="title">我的工作台</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
-        <el-submenu index="2-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="2-4-1">选项1</el-menu-item>
-          <el-menu-item index="2-4-2">选项2</el-menu-item>
-          <el-menu-item index="2-4-3">选项3</el-menu-item>
-        </el-submenu>
-      </el-submenu>
+      <el-menu-item index="1">销售管理</el-menu-item>
+      <el-menu-item index="2">仓储管理</el-menu-item>
+      <el-menu-item index="3">出库管理</el-menu-item>
+      <el-menu-item index="4">入库管理</el-menu-item>
+      <el-menu-item index="5">订单管理</el-menu-item>
     </el-menu>
     <div class="ops-area">
       <div class="company-name">
@@ -47,9 +39,10 @@
       <div class="ops-buttons">
         <el-dropdown>
           <span class="el-dropdown-link">
-            下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+            zakingwong<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>个人信息</el-dropdown-item>
             <el-dropdown-item>企业信息</el-dropdown-item>
             <el-dropdown-item>法人信息</el-dropdown-item>
             <el-dropdown-item>退出登录</el-dropdown-item>
@@ -78,6 +71,7 @@ export default {
 .header-nav {
   display: flex;
   flex-direction: row;
+
   .company-logo {
     width: 60px;
     height: 60px;
@@ -85,13 +79,16 @@ export default {
     color: white;
     text-shadow: 2px 2px 4px red;
     background: #397212;
+
     span {
       font-size: 12px;
     }
   }
+
   .header-menu {
     flex: 1;
   }
+
   .ops-area {
     width: 300px;
     display: flex;
@@ -99,8 +96,10 @@ export default {
     align-items: center;
     justify-content: space-around;
     background-color: #4d84ff;
+
     .cur-name {
     }
+
     .ops-buttons:hover {
       cursor: pointer;
     }

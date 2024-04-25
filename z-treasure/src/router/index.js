@@ -13,6 +13,10 @@ const contentRouter = [
     path: "order",
     component: () => import("@/views/order/index"),
   },
+  {
+    path: "customer",
+    component: () => import("@/views/customer/index"),
+  },
 ];
 
 const dashboardC = {
