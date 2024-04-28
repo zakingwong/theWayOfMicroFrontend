@@ -44,9 +44,10 @@ export default {
   name: "sideBar",
   methods: {
     selectPath(key, keyPath) {
-      console.log(key, keyPath);
       const curPath = this.$route.path;
-      if (curPath.includes(key)) return;
+      console.log(key, keyPath);
+      console.log(curPath, "curPath");
+      if (curPath === `/${key}`) return;
       this.$router.push(key);
     },
   },

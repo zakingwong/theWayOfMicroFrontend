@@ -10,8 +10,20 @@ const loginC = {
 
 const contentRouter = [
   {
+    path: "workbench",
+    component: () => import("@/views/workbench"),
+  },
+  {
     path: "order",
     component: () => import("@/views/order/index"),
+  },
+  {
+    path: "/order-create",
+    component: () => import("@/views/order/create"),
+  },
+  {
+    path: "/order-detail",
+    component: () => import("@/views/order/detail"),
   },
   {
     path: "customer",
@@ -21,6 +33,7 @@ const contentRouter = [
 
 const dashboardC = {
   path: "/",
+  redirect: "workbench",
   component: () => import("@/views/dashboard/index"),
   children: [...contentRouter],
 };
