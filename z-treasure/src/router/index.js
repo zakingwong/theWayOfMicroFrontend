@@ -29,6 +29,14 @@ const contentRouter = [
     path: "customer",
     component: () => import("@/views/customer/index"),
   },
+  {
+    path: "/customer-create",
+    component: () => import("@/views/customer/create"),
+  },
+  {
+    path: "/customer-detail",
+    component: () => import("@/views/customer/detail"),
+  },
 ];
 
 const dashboardC = {

@@ -53,35 +53,52 @@ export default {
         user: "",
         region: "",
       },
-      tableData: [
-        {
-          date: "2016-05-02",
-          name: "王小虎1",
-          address: "上海市普陀区金沙江路 1518 弄",
-          id: 1,
-        },
-        {
-          date: "2016-05-04",
-          name: "王小虎2",
-          address: "上海市普陀区金沙江路 1517 弄",
-          id: 2,
-        },
-        {
-          date: "2016-05-01",
-          name: "王小虎3",
-          address: "上海市普陀区金沙江路 1519 弄",
-          id: 3,
-        },
-        {
-          date: "2016-05-03",
-          name: "王小虎4",
-          address: "上海市普陀区金沙江路 1516 弄",
-          id: 4,
-        },
-      ],
+      tableData: [],
     };
   },
+  created() {
+    this.getDetailList();
+  },
   methods: {
+    getDetailList() {
+      this.$axios({
+        url: "https://httpbin.org/post",
+        method: "post",
+        data: {
+          a: 1,
+          b: 2,
+        },
+      }).then((res) => {
+        if (res.status === 200) {
+          this.tableData = [
+            {
+              date: "2016-05-02",
+              name: "王小虎1",
+              address: "上海市普陀区金沙江路 1518 弄",
+              id: 1,
+            },
+            {
+              date: "2016-05-04",
+              name: "王小虎2",
+              address: "上海市普陀区金沙江路 1517 弄",
+              id: 2,
+            },
+            {
+              date: "2016-05-01",
+              name: "王小虎3",
+              address: "上海市普陀区金沙江路 1519 弄",
+              id: 3,
+            },
+            {
+              date: "2016-05-03",
+              name: "王小虎4",
+              address: "上海市普陀区金沙江路 1516 弄",
+              id: 4,
+            },
+          ];
+        }
+      });
+    },
     onSubmit() {
       this.$message.success(JSON.stringify(this.formInline));
       console.log("submit!");

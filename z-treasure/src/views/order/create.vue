@@ -74,9 +74,29 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log("submit!");
-      this.$message.success("创建成功");
-      this.$router.go(-1);
+      const loading = this.$loading({
+        lock: true,
+        text: "Loading",
+        spinner: "el-icon-loading",
+        background: "rgba(0, 0, 0, 0.7)",
+      });
+      this.$axios({
+        url: "/post",
+        method: "post",
+        data: {
+          ...this.form,
+        },
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            console.log("submit!");
+            this.$message.success("创建成功");
+            this.$router.go(-1);
+          }
+        })
+        .finally(() => {
+          loading.close();
+        });
     },
     goBack() {
       this.$router.go(-1);

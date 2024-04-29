@@ -25,6 +25,22 @@
 <script>
 export default {
   name: "OrderDetail",
+  created() {
+    this.getDetailInfo();
+  },
+  methods: {
+    getDetailInfo() {
+      this.$axios({
+        url: "/get",
+        method: "get",
+      }).then((res) => {
+        console.log(res, "res");
+        if (res.status === 200) {
+          this.$message.success("获取详情成功");
+        }
+      });
+    },
+  },
 };
 </script>
 <style lang="less">
