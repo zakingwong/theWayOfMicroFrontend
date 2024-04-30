@@ -11,6 +11,7 @@
     </div>
     <!-- 企业信息 -->
     <div class="company-info">
+      <header-nav title="企业信息"></header-nav>
       <el-text>
         <p>
           Beijing Lemon Technology Co., Ltd. is a leading internet technology
@@ -60,6 +61,7 @@
     </div>
     <!-- 企业新闻 -->
     <div class="company-news">
+      <header-nav title="企业新闻"></header-nav>
       <ul>
         <li>小芒果科技获得A轮融资,将加大在人工智能领域的投入</li>
         <li>小芒果科技新款AI助手正式上市,引领智能家居新趋势</li>
@@ -75,6 +77,7 @@
     </div>
     <!-- 友情链接 -->
     <div class="friendly-link">
+      <header-nav title="友情链接"></header-nav>
       <ul>
         <li v-for="item in linkLists">{{ item }}</li>
       </ul>
@@ -83,20 +86,27 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-const imgLists = ref([]);
-const linkLists = ref([
-  "产品展示",
-  "人文气息",
-  "shibushi",
-  "duibudui",
-  "xiangbuxiang",
-  "yaobuyao",
-  "企业使命",
-  "分秒必争",
-  "瞬息即达",
-  "xiababa",
-  "huluanxie",
-]);
+let linkLists = ref<string[]>([]);
+
+$fetch("https://httpbin.org/post", {
+  method: "POST",
+  body: { hello: "world " },
+}).then((res) => {
+  console.log(res);
+  linkLists.value = [
+    "产品展示",
+    "人文气息",
+    "shibushi",
+    "duibudui",
+    "xiangbuxiang",
+    "yaobuyao",
+    "企业使命",
+    "分秒必争",
+    "瞬息即达",
+    "xiababa",
+    "huluanxie",
+  ];
+});
 </script>
 <style scoped lang="less">
 .demonstration {
@@ -124,18 +134,19 @@ const linkLists = ref([
     text-indent: 2ic;
   }
 }
-.company-news,.friendly-link {
+.company-news,
+.friendly-link {
   ul li {
     list-style-type: none;
   }
 }
-.friendly-link{
+.friendly-link {
   ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  ul li{
+  ul li {
     margin-left: 30px;
     margin-top: 20px;
   }
