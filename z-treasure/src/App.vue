@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    jenkins测试
     <router-view></router-view>
   </div>
 </template>
