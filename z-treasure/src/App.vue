@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    jenkins
     <router-view></router-view>
   </div>
 </template>
