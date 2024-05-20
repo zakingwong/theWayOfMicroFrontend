@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    jenkinsssssszaking
     <router-view></router-view>
   </div>
 </template>
