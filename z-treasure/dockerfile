@@ -1,0 +1,8 @@
+FROM node
+LABEL name="zaking" version='1.0'
+COPY ./nodedemo /z-treasure 
+WORKDIR /z-treasure
+USER root
+RUN npm install
+EXPOSE 3000
+CMD npm run build
