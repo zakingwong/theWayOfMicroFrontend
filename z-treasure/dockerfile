@@ -1,8 +1,38 @@
-FROM node
-LABEL name="zaking" version='1.0'
-COPY ./ /z-treasure 
-WORKDIR /z-treasure
-USER root
-RUN npm install
-EXPOSE 3000
-CMD npm run build
+# 使用 CentOS 7 最小化镜像作为基础镜像
+FROM centos/systemd as builder
+
+# 维护者信息
+LABEL maintainer="Your Name <your.email@example.com>"
+
+# 更新系统软件包并安装所需依赖
+RUN yum update -y && \
+    yum install -y \
+        epel-release \
+        nginx \
+        nodejs && \
+    yum clean all && \
+    rm -rf /var/cache/yum
+
+# 设置工作目录
+WORKDIR /app
+
+# 复制项目代码
+COPY . /app
+
+# 安装 Node.js 依赖
+RUN npm ci
+
+# 构建 Vue.js 3 项目
+RUN npm run build
+
+# 使用 Nginx 官方镜像作为运行时镜像
+FROM nginx:latest
+
+# 复制构建结果到 Nginx 容器
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# 暴露 Nginx 默认端口 80
+EXPOSE 80
+
+# 启动 Nginx 服务
+CMD ["nginx", "-g", "daemon off;"]
