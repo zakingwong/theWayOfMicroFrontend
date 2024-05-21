@@ -1,6 +1,6 @@
 FROM node
 LABEL name="zaking" version='1.0'
-COPY ./nodedemo /z-treasure 
+COPY /var/lib/jenkins/workspace/section4/z-treasure /z-treasure 
 WORKDIR /z-treasure
 USER root
 RUN npm install
