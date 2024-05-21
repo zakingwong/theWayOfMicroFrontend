@@ -1,6 +1,6 @@
 FROM node
 LABEL name="zaking" version='1.0'
-COPY ../z-treasure /z-treasure 
+COPY ./ /z-treasure 
 WORKDIR /z-treasure
 USER root
 RUN npm install
