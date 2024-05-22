@@ -31,6 +31,15 @@ FROM nginx:latest
 # 复制构建结果到 Nginx 容器
 COPY --from=builder /app/dist /usr/share/nginx/html
 
+# 设置容器名称
+LABEL com.example.container-name="treasure-container"
+
+# 检查是否已经存在同名容器,如果存在则停止并删除
+RUN if [ "$(docker ps -a -q -f name=treasure-container)" ]; then \
+        echo "Container 'treasure-container' already exists, stopping and removing it"; \
+        docker stop treasure-container && docker rm treasure-container; \
+    fi
+
 # 暴露 Nginx 默认端口 80
 EXPOSE 80
 
