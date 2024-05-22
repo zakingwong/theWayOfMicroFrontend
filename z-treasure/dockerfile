@@ -4,12 +4,25 @@ FROM centos/systemd as builder
 # 维护者信息
 LABEL maintainer="zakingwong"
 
+# 更新centos镜像地址
+RUN cd /etc/yum.repos.d/ && \
+    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && \
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* && \
+    yum install wget
+
+RUN wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo && \
+    yum clean all && \
+    yum makecache
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+RUN nvm install stable
+
 # 更新系统软件包并安装所需依赖
 RUN yum update -y && \
     yum install -y \
         epel-release \
         nginx \
-        nodejs && \
     yum clean all && \
     rm -rf /var/cache/yum
 
