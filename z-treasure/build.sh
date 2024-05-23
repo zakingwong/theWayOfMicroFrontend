@@ -26,5 +26,5 @@ echo "treasure-image image built."
 
 # 启动 treasure-container 容器
 echo "Starting treasure-container container..."
-docker run -d --name treasure-container treasure-image
+docker run -d --name treasure-container -p 90:80 treasure-image
 echo "treasure-container container started."
