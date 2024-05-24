@@ -129,7 +129,7 @@ $fetch("https://httpbin.org/post", {
   background-color: #d3dce6;
 }
 .company-info {
-  height: 400px;
+  height: 600px;
   p {
     text-indent: 2ic;
   }
