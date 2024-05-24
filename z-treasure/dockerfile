@@ -21,7 +21,7 @@ WORKDIR /app
 COPY . /app
 
 # 安装 Node.js 依赖
-RUN npm install
+RUN npm ci
 
 # 构建 Vue.js 3 应用
 RUN npm run build
