@@ -17,4 +17,4 @@ RUN npm run build
 EXPOSE 81
 
 # 启动 Nuxt3 应用
-CMD ["npm", "start"]
+CMD ["node", ".output/server/index.mjs"]
