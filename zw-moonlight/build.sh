@@ -26,5 +26,5 @@ echo "moonlight-image image built."
 
 # 启动 moonlight-container 容器
 echo "Starting moonlight-container container..."
-docker run -d --name moonlight-container -p 91:80 moonlight-image
+docker run -d --name moonlight-container -p 91:3000 moonlight-image
 echo "moonlight-container container started."

@@ -14,7 +14,7 @@ RUN npm install
 RUN npm run build
 
 # 暴露应用端口
-EXPOSE 81
+EXPOSE 3000
 
 # 启动 Nuxt3 应用
 CMD ["node", ".output/server/index.mjs"]
