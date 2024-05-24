@@ -1,5 +1,6 @@
 <template>
   <div class="app-box">
+    测试自动构建
     <div class="header-menu">
       <el-menu
         :default-active="activeIndex"
