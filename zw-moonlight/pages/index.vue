@@ -82,6 +82,7 @@
         <li v-for="item in linkLists">{{ item }}</li>
       </ul>
     </div>
+    <ad></ad>
   </div>
 </template>
 <script setup lang="ts">
