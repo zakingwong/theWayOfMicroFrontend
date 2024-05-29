@@ -1,6 +1,6 @@
 <template>
   <div class="moonlight-ad">
-    <iframe class="iframe-item" src="http://localhost:3001/#/" frameborder="0"></iframe>
+    <iframe class="iframe-item" src="http://moonlight.zaking.cn/ad" frameborder="0"></iframe>
   </div>
 </template>
 <style lang="less">
