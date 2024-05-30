@@ -36,6 +36,13 @@
         <el-menu-item index="4-1">是微前端</el-menu-item>
         <el-menu-item index="4-2">不是后台</el-menu-item>
       </el-submenu>
+      <el-submenu index="5">
+        <template slot="title">
+          <span>展览中心</span>
+        </template>
+        <el-menu-item index="design">创建展览页</el-menu-item>
+        <el-menu-item index="exhibit">预览展览页</el-menu-item>
+      </el-submenu>
     </el-menu>
   </div>
 </template>

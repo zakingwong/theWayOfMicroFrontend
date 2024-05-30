@@ -37,6 +37,14 @@ const contentRouter = [
     path: "/customer-detail",
     component: () => import("@/views/customer/detail"),
   },
+  {
+    path: "design",
+    component: () => import("@/views/design-create/index"),
+  },
+  {
+    path: "exhibit",
+    component: () => import("@/views/exhibit-show/index"),
+  },
 ];
 
 const dashboardC = {
