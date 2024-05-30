@@ -3,9 +3,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+  <div class="exhibit-page">exhibit-page</div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
