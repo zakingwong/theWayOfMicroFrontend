@@ -32,7 +32,7 @@ RUN rm -rf /var/www/html && \
 
 
 # 暴露 Nginx 端口
-EXPOSE 93
+EXPOSE 80
 
 # 启动 Nginx 服务
 CMD ["nginx", "-g", "daemon off;"]

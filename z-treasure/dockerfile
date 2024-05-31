@@ -23,7 +23,7 @@ COPY . /app
 # 安装 Node.js 依赖
 RUN npm install
 
-# 构建 Vue.js 3 应用
+# 构建 Vue.js 2 应用
 RUN npm run build
 
 # 配置 Nginx 的默认 HTML 目录
