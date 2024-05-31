@@ -1,6 +1,9 @@
 <template>
   <div class="design-create">
-    <iframe src="http://treasure.zaking.cn/create-page" frameborder="0"></iframe>
+    <iframe
+      src="http://treasure.zaking.cn/create-page"
+      frameborder="0"
+    ></iframe>
   </div>
 </template>
 <script>
