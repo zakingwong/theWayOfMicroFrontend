@@ -1,6 +1,6 @@
 <template>
   <div class="exhibit-show">
-    <iframe src="http://localhost:5174/exhibit-page" frameborder="0"></iframe>
+    <iframe src="http://treasure.zaking.cn/exhibit-page" frameborder="0"></iframe>
   </div>
 </template>
 <script>
