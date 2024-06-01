@@ -4,6 +4,10 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
+      path: '/',
+      redirect: '/create-page'
+    },
+    {
       path: '/create-page',
       name: 'createPage',
       // route level code-splitting
