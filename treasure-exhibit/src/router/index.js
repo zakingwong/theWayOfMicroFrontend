@@ -4,6 +4,10 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/',
+      redirect: '/exhibit-page'
+    },
+    {
       path: '/exhibit-page',
       name: 'exhibitPage',
       // route level code-splitting
