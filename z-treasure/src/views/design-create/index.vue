@@ -1,7 +1,7 @@
 <template>
   <div class="design-create">
     <iframe
-      src="http://treasure.zaking.cn/create-page"
+      src="http://treasure.zaking.cn/design/#/create-page"
       frameborder="0"
     ></iframe>
   </div>
