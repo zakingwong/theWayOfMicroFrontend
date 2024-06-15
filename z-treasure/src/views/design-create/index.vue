@@ -73,10 +73,11 @@ export default {
     },
     submitTypeToDesignMicro(type) {
       const designMicroIframeRef = document.querySelector("#desingIframeApp");
+      const path = "http://treasure.zaking.cn/design/"
       this.$postMessage(
         designMicroIframeRef.contentWindow,
         type,
-        "http://localhost:5173"
+        path,
       );
     },
   },

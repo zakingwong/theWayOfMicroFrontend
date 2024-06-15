@@ -36,7 +36,8 @@ const initEditor = () => {
 }
 const submitPage = () => {
   const resultStr = editorRef.value.getSemanticHTML()
-  window.parent.postMessage(resultStr, 'http://localhost:8080')
+  const path = "http://treasure.zaking.cn/#/design"
+  window.parent.postMessage(resultStr, path)
 }
 onMounted(() => {
   initEditor()
