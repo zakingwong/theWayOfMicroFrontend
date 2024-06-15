@@ -5,6 +5,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import axios from "axios";
+import postMessage from "@/utils/post-message";
+Vue.prototype.$postMessage = postMessage;
+
 Vue.prototype.$axios = axios;
 axios.defaults.baseURL = "https://httpbin.org";
 

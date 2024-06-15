@@ -4,8 +4,14 @@ import Quill from 'quill'
 import 'quill/dist/quill.snow.css' // 引入Quill的样式
 
 const editorRef: any = ref(null)
-
-onMounted(() => {
+const initMessageListener = () => {
+  window.addEventListener('message', (event) => {
+    if (event.data) {
+      editorRef.value.root.innerHTML = event.data
+    }
+  })
+}
+const initEditor = () => {
   const editor = new Quill('#quill-content', {
     modules: {
       toolbar: [
@@ -26,12 +32,16 @@ onMounted(() => {
     },
     theme: 'snow'
   })
-
   editorRef.value = editor
-})
-const submitPage = () => {
-  console.log(editorRef.value.getSemanticHTML())
 }
+const submitPage = () => {
+  const resultStr = editorRef.value.getSemanticHTML()
+  window.parent.postMessage(resultStr, 'http://localhost:8080')
+}
+onMounted(() => {
+  initEditor()
+  initMessageListener()
+})
 </script>
 
 <template>
