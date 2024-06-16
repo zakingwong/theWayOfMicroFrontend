@@ -34,16 +34,16 @@ export default {
     };
   },
   methods: {
-    onSubmit() {
-      if (
-        this.form.username === "zaking" &&
-        this.form.password === "treasure"
-      ) {
-        this.$router.push("/");
-      } else {
-        this.$message.error("您输入的账号或密码有误！");
-      }
-    },
+onSubmit() {
+  this.$store
+    .dispatch("login", this.form)
+    .then(() => {
+      this.$router.push("/");
+    })
+    .catch((err) => {
+      this.$message.error(err);
+    });
+},
   },
 };
 </script>

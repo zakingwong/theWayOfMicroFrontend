@@ -25,6 +25,8 @@
   </div>
 </template>
 <script>
+import Cookies from "js-cookie";
+
 export default {
   name: "DesignCreate",
   data() {
@@ -56,9 +58,14 @@ export default {
   },
   mounted() {
     window.addEventListener("message", this.getDataFromChild);
+    this.alertToken();
   },
   methods: {
+    alertToken() {
+      console.log(Cookies.get("z-treasure_key"), "z-treasure");
+    },
     getDataFromChild(event) {
+      console.log(event, "event");
       this.submitResult = event.data;
       this.$axios({
         url: "https://httpbin.org/post",
@@ -73,12 +80,9 @@ export default {
     },
     submitTypeToDesignMicro(type) {
       const designMicroIframeRef = document.querySelector("#desingIframeApp");
-      const path = "http://treasure.zaking.cn/design/"
-      this.$postMessage(
-        designMicroIframeRef.contentWindow,
-        type,
-        path,
-      );
+      const path = "http://treasure.zaking.cn/design/";
+      // const path = "http://localhost:5173";
+      this.$postMessage(designMicroIframeRef.contentWindow, type, path);
     },
   },
 };

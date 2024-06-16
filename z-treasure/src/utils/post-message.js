@@ -1,4 +1,4 @@
-export default postMessage = function () {
+export const postMes = function () {
   const params = Array.prototype.slice.call(arguments);
   const windowSource = params[0];
   params.splice(0, 1);

@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import Quill from 'quill'
 import 'quill/dist/quill.snow.css' // 引入Quill的样式
+import Cookies from 'js-cookie'
 
 const editorRef: any = ref(null)
 const initMessageListener = () => {
@@ -36,10 +37,15 @@ const initEditor = () => {
 }
 const submitPage = () => {
   const resultStr = editorRef.value.getSemanticHTML()
-  const path = "http://treasure.zaking.cn/#/design"
+  const path = 'http://treasure.zaking.cn/#/design'
+  // const path = 'http://localhost:8080'
   window.parent.postMessage(resultStr, path)
 }
+const alertToken = () => {
+  console.log(Cookies.get('z-treasure_key'), 'treasure-design')
+}
 onMounted(() => {
+  alertToken()
   initEditor()
   initMessageListener()
 })
