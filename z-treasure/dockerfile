@@ -1,5 +1,5 @@
-# 使用 Ubuntu 20.04 作为基础镜像
-FROM ubuntu:20.04
+# 使用 Ubuntu 24.04 作为基础镜像
+FROM ubuntu:24.04
 
 # 更新软件包列表并安装必要的依赖
 RUN apt-get update && apt-get install -y \
