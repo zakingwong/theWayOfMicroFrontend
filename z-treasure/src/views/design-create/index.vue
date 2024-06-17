@@ -12,6 +12,8 @@
       </el-button-group>
     </div>
     <iframe
+      id="desingIframeApp"
+      ref="iframeRef"
       src="http://treasure.zaking.cn/design/#/create-page"
       frameborder="0"
     ></iframe>
