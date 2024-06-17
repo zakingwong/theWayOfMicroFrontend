@@ -34,16 +34,16 @@ export default {
     };
   },
   methods: {
-onSubmit() {
-  this.$store
-    .dispatch("login", this.form)
-    .then(() => {
-      this.$router.push("/");
-    })
-    .catch((err) => {
-      this.$message.error(err);
-    });
-},
+    onSubmit() {
+      this.$store
+        .dispatch("login", this.form)
+        .then(() => {
+          this.$router.push("/");
+        })
+        .catch((err) => {
+          this.$message.error(err);
+        });
+    },
   },
 };
 </script>
