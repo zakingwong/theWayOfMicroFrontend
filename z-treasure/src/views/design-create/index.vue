@@ -1,9 +1,5 @@
 <template>
   <div class="design-create">
-    <!-- <iframe
-      src="http://treasure.zaking.cn/design/#/create-page"
-      frameborder="0"
-    ></iframe> -->
     <div class="quick-input_columns">
       <el-button-group>
         <el-button
@@ -15,13 +11,16 @@
         >
       </el-button-group>
     </div>
-
     <iframe
+      src="http://treasure.zaking.cn/design/#/create-page"
+      frameborder="0"
+    ></iframe>
+    <!-- <iframe
       id="desingIframeApp"
       ref="iframeRef"
       src="http://localhost:5173/design#/create-page"
       frameborder="0"
-    ></iframe>
+    ></iframe> -->
   </div>
 </template>
 <script>
