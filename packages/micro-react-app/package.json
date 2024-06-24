@@ -1,6 +1,6 @@
 {
   "name": "micro-react-app",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "main": "build/main.js",
   "dependencies": {
     "@babel/core": "^7.16.0",
