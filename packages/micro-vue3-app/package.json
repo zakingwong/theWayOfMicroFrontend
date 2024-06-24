@@ -1,7 +1,6 @@
 {
   "name": "micro-vue3-app",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
