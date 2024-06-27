@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { loadStaticResource, removeStyle } from "./micro";
+import { loadStaticResource } from "./micro";
 function MainApp() {
   let location = useLocation();
   const data = useSelector((state) => state.data.data);
@@ -28,11 +28,10 @@ function MainApp() {
       }
     }
     const anotherId = id === "vue" ? "react" : "vue";
-    const anotherFuns =
-      responseConfig[`${anotherId}`]["asset-manifest.json"].funs;
-    removeStyle({ id: anotherId });
-    window[`${anotherFuns["unmount"]}`] &&
-      window[`${anotherFuns["unmount"]}`]();
+    const $webcomponent = document.querySelector(`[micro-id=${anotherId}]`);
+    if($webcomponent){
+      $webcomponent.style.display = "none";
+    } 
     loadStaticResource(host, curConfig, id);
   }, [location, data, status]);
 

@@ -2,6 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const cors = require('cors');
+const ip = require("ip");
+const host = ip.address();
 
 const app = express();
 const port = 3000;
@@ -47,6 +49,6 @@ app.get("/micro-config", (req, res) => {
   res.json(combinedData);
 });
 
-app.listen(port, () => {
+app.listen(port,host, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
