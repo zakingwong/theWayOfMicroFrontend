@@ -1,7 +1,10 @@
 import "./App.css";
 import { Outlet, Link } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { fetchData } from "./store";
 function App() {
+  const dispatch = useDispatch();
+  dispatch(fetchData());
   return (
     <div className="App">
       <div className="header-nav">
