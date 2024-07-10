@@ -1,12 +1,15 @@
-function loadScript({ script, id }) {
-  return new Promise((resolve, reject) => {
-    const $script = document.createElement("script");
-    $script.src = script;
-    $script.setAttribute("micro-script", id);
-    $script.onload = resolve;
-    $script.onerror = reject;
-    document.body.appendChild($script);
-  });
+async function loadScript({ script, id }) {
+  const res = await window.fetch(script);
+  const text = await res.text();
+  (0, eval)(text);
+  // return new Promise((resolve, reject) => {
+  //   const $script = document.createElement("script");
+  //   $script.src = script;
+  //   $script.setAttribute("micro-script", id);
+  //   $script.onload = resolve;
+  //   $script.onerror = reject;
+  //   document.body.appendChild($script);
+  // });
 }
 
 function loadStyle({ style, id }) {
@@ -50,12 +53,7 @@ function loadStaticResource(host, config, id) {
         );
       }
     });
-  return Promise.all(queue)
+  return Promise.all(queue);
 }
 
-export {
-  loadScript,
-  loadStyle,
-  removeStyle,
-  loadStaticResource,
-};
+export { loadScript, loadStyle, removeStyle, loadStaticResource };
