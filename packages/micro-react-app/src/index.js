@@ -6,9 +6,8 @@ import App from "./App";
 
 let root;
 
-export function mount(containerId) {
-  console.log("react app mount");
-  root = ReactDOM.createRoot(document.getElementById(containerId));
+if (!window.singleSpaNavigate) {
+  root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
     <React.StrictMode>
       <App />
@@ -16,8 +15,22 @@ export function mount(containerId) {
   );
 }
 
-export function unmount() {
-  console.log("react app unmount: ", root);
+export async function bootstrap() {
+  console.log("react app bootstrap excuted");
+}
+
+export async function mount(props) {
+  console.log("react app mount");
+  root = ReactDOM.createRoot(document.getElementById(props.containerId));
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
+
+export async function unmount(props) {
+  console.log("react app unmount: ", props);
   root && root.unmount();
 }
 

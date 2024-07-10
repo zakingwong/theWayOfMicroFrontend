@@ -4,8 +4,31 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ReactApp from "./React";
-import VueApp from "./Vue";
+// import ReactApp from "./React";
+// import VueApp from "./Vue";
+
+import { start, registerApplication } from "single-spa";
+
+window.__DEV__ = true;
+
+registerApplication({
+  name: "micro-react-app",
+  app: () => import("micro-react-app"),
+  activeWhen: "/react",
+  customProps: {
+    containerId: "micro-app-container",
+  },
+});
+registerApplication({
+  name: "micro-vue3-app",
+  app: () => import("micro-vue3-app"),
+  activeWhen: "/vue",
+  customProps: {
+    containerId: "micro-app-container",
+  },
+});
+start();
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,11 +36,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "react",
-        element: <ReactApp />,
+        element: <div id="micro-app-container"></div>,
       },
       {
         path: "vue",
-        element: <VueApp />,
+        element: <div id="micro-app-container"></div>,
       },
     ],
   },

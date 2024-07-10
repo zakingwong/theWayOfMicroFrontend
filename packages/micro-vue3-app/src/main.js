@@ -4,14 +4,16 @@ import App from './App.vue'
 // createApp(App).mount('#app')
 
 let app;
-
-export function mount(containerId) {
+export async function bootstrap() {
+  console.log("[Vue 子应用] bootstrap excuted");
+}
+export async function mount(props) {
   console.log("vue app mount");
   app = createApp(App);
-  app.mount(`#${containerId}`);
+  app.mount(`#${props.containerId}`);
 }
 
-export function unmount() {
-  console.log("vue app unmount: ", app);
+export async function unmount(props) {
+  console.log("vue app unmount: ", props);
   app && app.unmount();
 }
