@@ -4,6 +4,9 @@ import "./index.css";
 import App from "./App";
 // import reportWebVitals from './reportWebVitals';
 
+var name = 'zaking';
+console.log('-----my react name:',name)
+
 let root;
 
 if (!window.singleSpaNavigate) {

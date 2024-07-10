@@ -5,7 +5,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        本地的Single-Spa
+        <span className='react-title'>本地React的Single-Spa</span>
+        <span className='vue-title'>本地Vue的Single-Spa</span>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.

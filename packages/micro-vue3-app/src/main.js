@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 // createApp(App).mount('#app')
+var name = 'zaking vue';
+console.log('-----my vue name:',name)
 
 let app;
 export async function bootstrap() {
