@@ -6,13 +6,14 @@
     "microVue": "node microVueServer.js",
     "microReact": "node microReactServer.js",
     "microJson": "node jsonServer.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon microVueServer.js & nodemon microReactServer.js & nodemon jsonServer.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "ip": "^2.0.1"
+    "ip": "^2.0.1",
+    "nodemon": "^3.1.4"
   }
 }

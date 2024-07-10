@@ -36,7 +36,7 @@ function MainApp() {
     loadStaticResource(host, curConfig, id);
   }, [location, data, status]);
 
-  return <div id="micro-slot">zaking</div>;
+  return <div id="micro-app-container"></div>;
 }
 
 export default MainApp;

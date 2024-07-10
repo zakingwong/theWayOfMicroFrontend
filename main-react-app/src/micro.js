@@ -29,7 +29,7 @@ function removeStyle({ id }) {
 function loadStaticResource(host, config, id) {
   if (!Object.keys(config).length) return;
   const entrypoints = config.entrypoints;
-  const funs = config.funs;
+  // const funs = config.funs;
   const queue = [];
   entrypoints &&
     entrypoints.forEach((item) => {
@@ -50,9 +50,7 @@ function loadStaticResource(host, config, id) {
         );
       }
     });
-  Promise.all(queue).then(() => {
-    window[`${funs["mount"]}`] && window[`${funs["mount"]}`]("micro-slot");
-  });
+  return Promise.all(queue)
 }
 
 export {
