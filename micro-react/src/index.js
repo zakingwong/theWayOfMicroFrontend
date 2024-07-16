@@ -7,11 +7,10 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 let root;
 
-console.log(window.__POWERED_BY_QIANKUN__);
 if (!window.__POWERED_BY_QIANKUN__) {
   root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
-    <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? "/react" : "/"}>
+    <BrowserRouter basename={"/"}>
       <React.StrictMode>
         <App />
       </React.StrictMode>
@@ -25,9 +24,11 @@ export async function bootstrap() {
 
 export async function mount(props) {
   console.log("[react18] props from main framework mount", props);
-  console.log(props.container,'container------------')
+  console.log(props.container, "container------------");
   const { container } = props;
-  const rootDom = container ? container.querySelector('#root') : document.querySelector('#root')
+  const rootDom = container
+    ? container.querySelector("#root")
+    : document.querySelector("#root");
   root = ReactDOM.createRoot(rootDom);
   root.render(
     <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? "/react" : "/"}>
