@@ -23,10 +23,10 @@ registerMicroApps(
       },
     },
     {
-      name: "micro-angular-app",
-      entry: "http://10.0.57.16:4200/",
-      container: "#angular",
-      activeRule: "/angular",
+      name: "micro-tradition-app",
+      entry: "http://10.0.57.16:3003/",
+      container: "#tradition",
+      activeRule: "/tradition",
       props: {
         desc: "zakingwong",
       },

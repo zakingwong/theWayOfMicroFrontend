@@ -18,9 +18,9 @@ const routes = [
         component: () => <div id="react">react</div>,
       },
       {
-        path: "/angular",
-        name: "angular",
-        component: () => <div id="angular">angular</div>,
+        path: "/tradition",
+        name: "tradition",
+        component: () => <div id="tradition">tradition</div>,
       },
     ],
   },
