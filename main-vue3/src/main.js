@@ -13,6 +13,15 @@ registerMicroApps(
         desc: "zakingwong",
       },
     },
+    {
+      name: "micro-vue-app",
+      entry: "http://10.0.57.16:8081/",
+      container: "#vue2",
+      activeRule: "/vue2",
+      props: {
+        desc: "zakingwong",
+      },
+    },
   ],
   {
     beforeLoad: (app) => console.log("before load", app.name),

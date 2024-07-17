@@ -1,4 +1,4 @@
-# main-vue2
+# micro-vue2
 
 ## Project setup
 ```
