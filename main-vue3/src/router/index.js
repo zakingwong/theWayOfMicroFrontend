@@ -15,7 +15,12 @@ const routes = [
       {
         path: "/react",
         name: "react",
-        component: () => <div id="react"></div>,
+        component: () => <div id="react">react</div>,
+      },
+      {
+        path: "/angular",
+        name: "angular",
+        component: () => <div id="angular">angular</div>,
       },
     ],
   },

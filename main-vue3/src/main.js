@@ -14,10 +14,19 @@ registerMicroApps(
       },
     },
     {
-      name: "micro-vue-app",
+      name: "micro-vue2-app",
       entry: "http://10.0.57.16:8081/",
       container: "#vue2",
       activeRule: "/vue2",
+      props: {
+        desc: "zakingwong",
+      },
+    },
+    {
+      name: "micro-angular-app",
+      entry: "http://10.0.57.16:4200/",
+      container: "#angular",
+      activeRule: "/angular",
       props: {
         desc: "zakingwong",
       },
