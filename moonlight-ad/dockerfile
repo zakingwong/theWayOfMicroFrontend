@@ -8,12 +8,10 @@ WORKDIR /app
 COPY . /app
 
 # 安装项目依赖
-RUN npm install --global yarn
-
-RUN yarn
+RUN npm install
 
 # 构建 Next 项目
-RUN yarn build
+RUN npm run build
 
 # 暴露应用端口
 EXPOSE 3000
