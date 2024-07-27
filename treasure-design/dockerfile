@@ -20,11 +20,13 @@ WORKDIR /app
 # 复制项目代码到工作目录
 COPY . /app
 
-# 安装 Node.js 依赖
-RUN yarn
+RUN npm config set registry http://mirrors.cloud.tencent.com/npm/
 
-# 构建 Vue.js 3 应用
-RUN yarn build
+# # # 安装 Node.js 依赖
+RUN npm install
+
+# # 构建 Vue.js 2 应用
+RUN npm run build
 
 # 配置 Nginx 的默认 HTML 目录
 RUN rm -rf /var/www/html && \
