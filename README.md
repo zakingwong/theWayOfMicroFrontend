@@ -1,7 +1,6 @@
 # theWayOfMicroFrontend
 《微前端之道》代码示例
-
-
+![WechatIMG499](https://github.com/user-attachments/assets/69a23e86-0bb8-4a7c-8537-819d6309cc0b)
 ## 本书参考：
 《微前端实战》——清华大学出版社——[美]迈克尔.格尔斯（Michael Geers）
 
